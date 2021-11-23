@@ -1,0 +1,36 @@
+
+INFO:root:Initialization of logs
+INFO:root:Start crontab...
+INFO:root:Time and command recording
+INFO:root:2021-11-22 10:47:31.139074: the task 'echo 'dfgdfg'' is executed
+INFO:root:2021-11-22 10:47:31.139074: the task 'echo 'asasasas'' is executed
+INFO:root:Initialization of logs
+INFO:root:Start crontab...
+INFO:root:Time and command recording
+INFO:root:Initialization of logs
+INFO:root:Start crontab...
+INFO:root:Time and command recording
+INFO:root:Initialization of logs
+INFO:root:Start crontab...
+INFO:root:Time and command recording
+INFO:root:Initialization of logs
+ERROR:crontab:"No enumeration for Minutes: 'dayly'"
+INFO:root:Start crontab...
+INFO:root:Time and command recording
+INFO:root:Initialization of logs
+INFO:root:Start crontab...
+INFO:root:Time and command recording
+INFO:root:Initialization of logs
+INFO:root:Start crontab...
+INFO:root:Time and command recording
+INFO:root:Initialization of logs
+INFO:root:Start crontab...
+INFO:root:Time and command recording
+INFO:root:Initialization of logs
+INFO:root:Start crontab...
+INFO:root:Time and command recording
+INFO:root:2021-11-22 17:56:50.208094: the task 'echo 'sdfsdf'' is executed
+INFO:root:Initialization of logs
+INFO:root:Start crontab...
+INFO:root:Time and command recording
+INFO:root:2021-11-22 17:59:04.976069: the task 'echo 'sdfsdf'' is executed

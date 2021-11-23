@@ -1,0 +1,5 @@
+{
+  "LOG_PATH" : "/home/misha/PycharmProjects/FirstProject/crontab/info.log",
+  "CRONTAB_PATH" : "/home/misha/Desktop/crontab.tab",
+  "LOG_LEVEL" : 40
+}
