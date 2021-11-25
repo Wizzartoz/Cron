@@ -1,3 +1,4 @@
+import os
 import signal
 
 from croniter import croniter
@@ -24,11 +25,18 @@ def cron():
             time_is_now = datetime.now()
             if croniter.match(str(string.slices), time_is_now):
                 pid = os.fork()
-                if pid == 0:
+                if pid > 0:
+                    signal.signal(signal.SIGCHLD, signal.SIG_IGN)
+                    continue
+                else:
                     task = string.command
                     os.system(task)
                     logging.info(f"{time_is_now}: the task '{task}' is executed")
-                    exit(0)
+                '''if pid == 0:
+                    task = string.command
+                    os.system(task)
+                    logging.info(f"{time_is_now}: the task '{task}' is executed")
+                    exit(0)'''
         time.sleep(60)
 
 
@@ -44,7 +52,6 @@ if __name__ == "__main__":
         log_level = config_data['LOG_LEVEL']
     except KeyError or NameError:
         exit(-1)
-
     try:
         log_path = config_data['LOG_PATH']
         logging.basicConfig(filename=log_path, level=log_level)
