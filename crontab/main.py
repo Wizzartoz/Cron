@@ -8,7 +8,6 @@ import time
 import logging
 
 
-# processing and accomplish commands
 def get_jobs():
     try:
         crontab_path = config_data['CRONTAB_PATH']
@@ -25,27 +24,20 @@ def cron():
             time_is_now = datetime.now()
             if croniter.match(str(string.slices), time_is_now):
                 pid = os.fork()
-                if pid > 0:
-                    signal.signal(signal.SIGCHLD, signal.SIG_IGN)
-                    continue
-                else:
+                if pid == 0:
                     task = string.command
                     os.system(task)
                     logging.info(f"{time_is_now}: the task '{task}' is executed")
-                '''if pid == 0:
-                    task = string.command
-                    os.system(task)
-                    logging.info(f"{time_is_now}: the task '{task}' is executed")
-                    exit(0)'''
+                    exit(0)
         time.sleep(60)
 
 
 if __name__ == "__main__":
     main_path = os.path.split(__file__)[0]
     try:
-        f = open(main_path + '/config.json', 'r')
-        config_data = json.load(f)
-        f.close()
+        file = open(main_path + '/config.json', 'r')
+        config_data = json.load(file)
+        file.close()
     except NameError:
         exit(-1)
     try:
