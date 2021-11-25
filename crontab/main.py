@@ -28,7 +28,7 @@ def cron():
                     task = string.command
                     os.system(task)
                     logging.info(f"{time_is_now}: the task '{task}' is executed")
-                    exit(0)
+                    os.kill(getpid.id(),signal. SIGKILL)
         time.sleep(60)
 
 
